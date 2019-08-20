@@ -13,7 +13,7 @@ class ComandoWriteVar extends Comando {
    }
    
    public int executa() {
-      //Insira seu codigo
+      System.out.print(Variaveis.var[variavel - 'a']);
       return linha+1;
    }
 }
