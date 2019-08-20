@@ -9,15 +9,16 @@ class Interpretador {
    private String palavraAtual;
    		
    public Interpretador(String nome) {
-      arq= new ArquivoFonte(nome);
-      comandos= new Vector();
+      arq = new ArquivoFonte(nome);
+      comandos = new Vector();
+      Variaveis var = new Variaveis();
    }
    
    public void listaArquivo() {
       String palavra;
       
       do {
-         palavra= arq.proximaPalavra();
+         palavra = arq.proximaPalavra();
          System.out.println ("Palavra: " + palavra);
       } while (!palavra.equals("EOF"));
    }
@@ -25,8 +26,9 @@ class Interpretador {
    public void leArquivo() {
       
       String comandoAtual;
-      int linha= 0;
+      int linha = 0;
       do {
+          
          comandoAtual= arq.proximaPalavra();
             
          if(comandoAtual.equals("endp")){
@@ -37,30 +39,47 @@ class Interpretador {
             trataComandoWriteln(linha);
             linha++;
          }
+         else if(comandoAtual.equals("writestr")){
+            trataComandoWriteStr(linha);
+            linha++; 
+         }
+         else if(comandoAtual.equals("read")){
+             trataComandoRead(linha);
+             linha++;
+         }
                            		  
       } while (!comandoAtual.equals("endp"));
    }
    
-   private void trataComandoEndp(int lin) {
-      
-      ComandoEndp c= new ComandoEndp(lin);
+   private void trataComandoEndp(int lin) {  
+      ComandoEndp c = new ComandoEndp(lin);
       comandos.addElement(c);
    }
    	   	
-   private void trataComandoWriteln(int lin) {
-      
-      ComandoWriteln c= new ComandoWriteln(lin);
+   private void trataComandoWriteln(int lin) {   
+      ComandoWriteln c = new ComandoWriteln(lin);
       comandos.addElement(c);
-   }   	
-      
+    }   	
+   
+    private void trataComandoWriteStr(int lin) {
+      arq.proximaPalavra();
+      ComandoWriteStr c = new ComandoWriteStr(lin, arq.proximaPalavra());
+      comandos.addElement(c);
+    }   
+    
+    private void trataComandoRead(int lin) {
+        ComandoRead c = new ComandoRead(lin, arq.proximaPalavra());
+        comandos.addElement(c);
+    }
    
    public void executa() {
       
       Comando cmd;
-      int pc= 0;
+      int pc = 0;
       do {
-         cmd= (Comando) comandos.elementAt(pc);
-         pc= cmd.executa();
+         cmd = (Comando) comandos.elementAt(pc);
+         pc = cmd.executa();
       } while (pc != -1);
    }   
+
 }
