@@ -2,9 +2,9 @@ public class Console {
 
    public static String readLine() {
 
-	 int ch;
-     String r= "";
-     boolean done= false;
+     int ch;
+     String r = "";
+     boolean done = false;
      while (!done) {
 	   try {
 		 ch = System.in.read();

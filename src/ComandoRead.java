@@ -1,7 +1,7 @@
 import java.io.*;  
 import java.util.*;
 
-import lp.*; 
+import lp.*;
 
 class ComandoRead extends Comando {
    
@@ -9,14 +9,14 @@ class ComandoRead extends Comando {
    char variavel;
    	
    ComandoRead(int lin, String txt) {
-      linha= lin;
-      variavel= txt.charAt(0);
+      linha = lin;
+      variavel = txt.charAt(0);
    }
    
    public int executa() {
        	
       try {
-         //Insira seu codigo
+        var[(int) variavel - 97] = teclado.read();
       }
       catch( Exception e) {
          System.out.println("ERRO: "+e);
