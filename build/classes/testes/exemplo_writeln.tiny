@@ -1,0 +1,7 @@
+writeStr("Digite o valor de x ");
+read(x);
+writeln;
+writeStr("O valor digitado foi: ");
+writeVar(x);
+writeln;
+endp

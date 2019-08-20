@@ -1,21 +1,21 @@
 public class Console {
 
-   public static String readLine() {
+    public static String readLine() {
 
-     int ch;
-     String r = "";
-     boolean done = false;
-     while (!done) {
-	   try {
-		 ch = System.in.read();
-	     if (ch < 0 || (char)ch == '\n')
-	        done = true;
-	      else if ((char)ch != '\r')
-	        r = r + (char) ch;
-	   }
-	   catch(java.io.IOException e){
-		 done = true;
-	   }
+    int ch;
+    String r = "";
+    boolean done = false;
+    while (!done) {
+        try {
+              ch = System.in.read();
+          if (ch < 0 || (char)ch == '\n')
+             done = true;
+           else if ((char)ch != '\r')
+             r = r + (char) ch;
+        }
+        catch(java.io.IOException e){
+              done = true;
+        }
      }
      return r;
    }

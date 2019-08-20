@@ -1,0 +1,19 @@
+writeStr("Começando o teste");
+writeln;
+writeStr("Digite um valor para a ");
+read(a);
+writeStr("Digite um valor para b ");
+read(b);
+writeStr("Digite um valor para c ");
+read(c);
+d:= b * b - 4 * a * c ;
+writeVar(d);
+x:= (0 - b + sqrt(d))/(2*a) ;
+y:= (0 - b - sqrt(d))/(2*a) ;
+writeln;
+writeStr("Raiz x1= ");
+writeVar(x);
+writeln;
+writeStr("Raiz x2= ");
+writeVar(y);
+endp

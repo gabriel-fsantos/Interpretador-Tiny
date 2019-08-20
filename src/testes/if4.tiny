@@ -1,0 +1,17 @@
+writeStr("Informe o tamanho dos lados do triangulo");
+writeStr("Lado 1= ");
+read(a);
+writeStr("Lado 2= ");
+read(b);
+writeStr("Lado 3= ");
+read(c);
+writeln;
+if (a = 0) then
+   writeStr("Nao eh triangulo");
+endif
+if (a <> 0) then
+	if (b <> 0) and (c <> 0) then
+  		writeStr("Eh triangulo");
+	endif
+endif
+endp

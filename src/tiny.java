@@ -1,8 +1,3 @@
-import java.io.*;  
-import java.util.*;
-
-import lp.*;      
-
 public class tiny {
    
    public static void main(String[] args) {
