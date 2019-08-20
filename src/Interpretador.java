@@ -11,7 +11,6 @@ class Interpretador {
    public Interpretador(String nome) {
       arq = new ArquivoFonte(nome);
       comandos = new Vector();
-      Variaveis var = new Variaveis();
    }
    
    public void listaArquivo() {
@@ -39,7 +38,7 @@ class Interpretador {
             trataComandoWriteln(linha);
             linha++;
          }
-         else if(comandoAtual.equals("writestr")){
+         else if(comandoAtual.equals("writeStr")){
             trataComandoWriteStr(linha);
             linha++; 
          }
@@ -47,6 +46,10 @@ class Interpretador {
              trataComandoRead(linha);
              linha++;
          }
+         else if(comandoAtual.equals("writeVar")){
+             trataComandoWriteVar(linha);
+             linha++;
+         }         
                            		  
       } while (!comandoAtual.equals("endp"));
    }
@@ -68,10 +71,15 @@ class Interpretador {
     }   
     
     private void trataComandoRead(int lin) {
-        ComandoRead c = new ComandoRead(lin, arq.proximaPalavra());
-        comandos.addElement(c);
+      arq.proximaPalavra();
+      ComandoRead c = new ComandoRead(lin, arq.proximaPalavra());
+      comandos.addElement(c);
     }
-   
+    private void trataComandoWriteVar(int lin) {
+      arq.proximaPalavra();
+      ComandoWriteVar c = new ComandoWriteVar(lin, arq.proximaPalavra());
+      comandos.addElement(c);
+   }
    public void executa() {
       
       Comando cmd;

@@ -16,7 +16,7 @@ class ComandoRead extends Comando {
    public int executa() {
        	
       try {
-        var[(int) variavel - 97] = teclado.read();
+          Variaveis.var[variavel - 'a'] = Float.parseFloat(teclado.readLine());
       }
       catch( Exception e) {
          System.out.println("ERRO: "+e);
