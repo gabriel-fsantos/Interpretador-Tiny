@@ -1,18 +1,18 @@
-   package Expressao;
+package Expressao;
 
-   import Variavel.*;
+import Variavel.*;
 
-    public class ExpVariavel extends Expressao{
-   
-      char variavel;
-   	
-       public ExpVariavel(char nomevar) {
-         variavel= nomevar;
-      }
-   
-      @Override
-       public double avalia() {
-         return Variaveis.var[ variavel - 97 ];
-      }
-      
-   }
+public class ExpVariavel extends Expressao {
+
+    char variavel;
+
+    public ExpVariavel(char nomevar) {
+        variavel = nomevar;
+    }
+
+    @Override
+    public double avalia() {
+        return Variaveis.var[variavel - 97];
+    }
+
+}

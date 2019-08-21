@@ -1,4 +1,4 @@
-writeStr("Começando o teste");
+writeStr("ComeÃ§ando o teste");
 writeln;
 writeStr("Digite um valor para a ");
 read(a);

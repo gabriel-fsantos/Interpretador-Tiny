@@ -1,5 +1,6 @@
-   package Expressao;
-	
-	 public abstract class Expressao {
-       public abstract double avalia();
-   }
+package Expressao;
+
+public abstract class Expressao {
+
+    public abstract double avalia();
+}

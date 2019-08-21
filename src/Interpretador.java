@@ -1,4 +1,3 @@
-import Variavel.*;
 import Comando.*;
 import Expressao.*;
 import java.util.*;
@@ -77,16 +76,16 @@ public class Interpretador {
                 int linhaIf = (Integer) pilhaC.pop();
                 trataComandoEndif(linha, linhaIf);;
             } 
-            else if (comandoAtual.equals("while")) {
-                pilhaC.push(linha);
-                trataComandoWhile(linha);
-                linha++;
-            } 
-            else if (comandoAtual.equals("endw")) {
-                int linhaW = (Integer) pilhaC.pop();
-                trataComandoEndw(linha, linhaW);
-                linha++;
-            } 
+//            else if (comandoAtual.equals("while")) {
+//                pilhaC.push(linha);
+//                trataComandoWhile(linha);
+//                linha++;
+//            } 
+//            else if (comandoAtual.equals("endw")) {
+//                int linhaW = (Integer) pilhaC.pop();
+//                trataComandoEndw(linha, linhaW);
+//                linha++;
+//            } 
             else if (comandoAtual.length() == 1 && comandoAtual.charAt(0) >= 'a' && comandoAtual.charAt(0) <= 'z') {
                 String variavel = comandoAtual;
                 comandoAtual = arq.proximaPalavra();
@@ -128,12 +127,14 @@ public class Interpretador {
     }
 
     private void trataComandoIf(int lin) {
+        
         trataExpressao();
         ComandoIf c = new ComandoIf(lin, raizArvoreExpressao);
         comandos.addElement(c);
     }
 
     private void trataComandoElse(int lin, int linIf) {
+        
         ComandoIf cmd = (ComandoIf) comandos.elementAt(linIf);
         cmd.setLinhaEnd(lin + 1);
         ComandoElse c = new ComandoElse(lin);
@@ -141,11 +142,13 @@ public class Interpretador {
     }
 
     private void trataComandoEndif(int lin, int linIfElse) {
+        
         Condicao cmd = (Condicao) comandos.elementAt(linIfElse);
         cmd.setLinhaEnd(lin);
     }
 
     private void trataComandoAtrib(int lin, String txt) {
+        
         char var = txt.charAt(0);
         trataExpressao();
         ComandoAtrib c = new ComandoAtrib(lin, var, raizArvoreExpressao);
@@ -153,6 +156,7 @@ public class Interpretador {
     }
 
     private void trataExpressao() {
+        
         palavraAtual = arq.proximaPalavra();
         pilha = new Stack();
         expressaoLogica();
@@ -160,6 +164,7 @@ public class Interpretador {
     }
 
     private void expressaoLogica() {
+        
         expressaoComparativa();
         while (palavraAtual.equals("and") || palavraAtual.equals("or") || palavraAtual.equals("not")) {
             String op = palavraAtual;
@@ -172,9 +177,11 @@ public class Interpretador {
     }
 
     private void expressaoComparativa() {
+        
         expressao();
         while (palavraAtual.equals("<") || palavraAtual.equals(">") || palavraAtual.equals(">=")
-                || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")) {
+            || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")) {
+            
             String op = palavraAtual;
             palavraAtual = arq.proximaPalavra();
             expressao();
@@ -185,6 +192,7 @@ public class Interpretador {
     }
 
     private void expressao() {
+        
         termo();
         while (palavraAtual.equals("+") || palavraAtual.equals("-")) {
             String op = palavraAtual;
@@ -197,6 +205,7 @@ public class Interpretador {
     }
 
     private void termo() {
+        
         fator();
         while (palavraAtual.equals("*") || palavraAtual.equals("/")) {
             String op = palavraAtual;
@@ -209,6 +218,7 @@ public class Interpretador {
     }
 
     private void fator() {
+        
         if (palavraAtual.equals("sqrt")) {
             palavraAtual = arq.proximaPalavra();
             palavraAtual = arq.proximaPalavra();
@@ -231,9 +241,7 @@ public class Interpretador {
             if (palavraAtual.equals(")")) {
                 palavraAtual = arq.proximaPalavra();
             }
-
         }
-
     }
 
     public void executa() {
@@ -245,5 +253,4 @@ public class Interpretador {
             pc = cmd.executa();
         } while (pc != -1);
     }
-
 }
