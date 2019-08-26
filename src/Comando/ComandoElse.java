@@ -7,9 +7,11 @@ public class ComandoElse extends Comando implements Condicao {
     public ComandoElse(int lin) {
     }
 
+    @Override
     public void setLinhaEnd(int lin) {
     }
 
+    @Override
     public int executa() {
         return 0;
     }

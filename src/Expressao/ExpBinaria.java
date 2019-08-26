@@ -1,7 +1,5 @@
 package Expressao;
 
-import Variavel.*;
-
 public class ExpBinaria extends Expressao {
 
     String op;
@@ -14,7 +12,26 @@ public class ExpBinaria extends Expressao {
         this.exp2 = exp2;
     }
 
+    @Override
     public double avalia() {
-        return 0;
+        
+        double resultado = 0; 
+        switch (op) {
+            case "+":
+                resultado = (double) exp1 + (double) exp2;
+                break;
+            case "-":
+                resultado = (double) exp1 - (double) exp2;
+                break;    
+            case "*":
+                resultado = (double) exp1 * (double) exp2;
+                break;  
+            case "/":
+                resultado = (double) exp1 / (double) exp2;
+                break; 
+            default:
+                break;
+        }
+        return resultado;
     }
 }

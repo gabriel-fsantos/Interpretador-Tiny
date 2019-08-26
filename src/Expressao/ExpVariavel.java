@@ -1,6 +1,6 @@
 package Expressao;
 
-import Variavel.*;
+import Variavel.Variaveis;
 
 public class ExpVariavel extends Expressao {
 

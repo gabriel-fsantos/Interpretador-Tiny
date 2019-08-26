@@ -8,6 +8,7 @@ public class ExpConstante extends Expressao {
         this.valor = valor;
     }
 
+    @Override
     public double avalia() {
         return valor;
     }

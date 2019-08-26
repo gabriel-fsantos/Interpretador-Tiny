@@ -1,6 +1,6 @@
 package Expressao;
 
-import Variavel.*;
+import Variavel.Variaveis;
 
 public class ExpComparativa extends Expressao {
 
@@ -16,6 +16,7 @@ public class ExpComparativa extends Expressao {
         this.exp2 = exp2;
     }
 
+    @Override
     public double avalia() {
 
         boolean v = false;

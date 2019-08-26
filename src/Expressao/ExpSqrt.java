@@ -1,6 +1,6 @@
 package Expressao;
 
-import Variavel.*;
+import Variavel.Variaveis;
 
 public class ExpSqrt extends Expressao {
 
@@ -10,6 +10,7 @@ public class ExpSqrt extends Expressao {
         this.sqrt = sqrt;
     }
 
+    @Override
     public double avalia() {
         double valor;
 

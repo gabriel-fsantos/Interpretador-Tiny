@@ -1,0 +1,4 @@
+read(a)
+a:= a + 1;
+writeVar(a);
+endp

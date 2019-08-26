@@ -18,7 +18,6 @@ public class Interpretador {
 
     public void listaArquivo() {
         String palavra;
-
         do {
             palavra = arq.proximaPalavra();
             System.out.println("Palavra: " + palavra);
@@ -158,6 +157,7 @@ public class Interpretador {
     private void trataExpressao() {
         
         palavraAtual = arq.proximaPalavra();
+        System.out.println(palavraAtual);
         pilha = new Stack();
         expressaoLogica();
         raizArvoreExpressao = (Expressao) pilha.pop();
@@ -180,7 +180,7 @@ public class Interpretador {
         
         expressao();
         while (palavraAtual.equals("<") || palavraAtual.equals(">") || palavraAtual.equals(">=")
-            || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")) {
+        || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")) {
             
             String op = palavraAtual;
             palavraAtual = arq.proximaPalavra();

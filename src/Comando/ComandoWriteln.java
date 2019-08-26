@@ -2,7 +2,6 @@ package Comando;
 
 import java.io.*;
 import java.util.*;
-
 import lp.*;
 
 public class ComandoWriteln extends Comando {
@@ -11,6 +10,7 @@ public class ComandoWriteln extends Comando {
         linha = lin;
     }
 
+    @Override
     public int executa() {
         System.out.println();
         return linha + 1;

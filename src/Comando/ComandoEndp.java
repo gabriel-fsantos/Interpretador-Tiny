@@ -6,6 +6,7 @@ public class ComandoEndp extends Comando {
         linha = lin;
     }
 
+    @Override
     public int executa() {
         return -1;
     }

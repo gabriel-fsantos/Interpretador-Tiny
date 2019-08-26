@@ -3,7 +3,6 @@ package Comando;
 import Variavel.Variaveis;
 import java.io.*;
 import java.util.*;
-
 import lp.*;
 
 public class ComandoRead extends Comando {
@@ -16,6 +15,7 @@ public class ComandoRead extends Comando {
         variavel = txt.charAt(0);
     }
 
+    @Override
     public int executa() {
 
         try {

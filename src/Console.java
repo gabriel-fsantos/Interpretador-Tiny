@@ -28,7 +28,7 @@ public class Console {
 		return Integer.valueOf(readLine().trim()).intValue();
 	    }
 	    catch(NumberFormatException e){
-		System.out.println("Not an	integer. Please	try again!");
+		System.out.println("Not an integer. Please try again!");
 	    }
         }
     }

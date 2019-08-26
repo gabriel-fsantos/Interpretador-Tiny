@@ -1,10 +1,5 @@
 package Comando;
 
-import java.io.*;
-import java.util.*;
-
-import lp.*;
-
 public class ComandoWriteStr extends Comando {
 
     String texto;
@@ -14,6 +9,7 @@ public class ComandoWriteStr extends Comando {
         texto = txt;
     }
 
+    @Override
     public int executa() {
         System.out.print(texto);
         return linha + 1;

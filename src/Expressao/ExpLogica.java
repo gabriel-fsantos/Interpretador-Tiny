@@ -1,6 +1,6 @@
 package Expressao;
 
-import Variavel.*;
+import Variavel.Variaveis;
 
 public class ExpLogica extends Expressao {
 
@@ -16,11 +16,12 @@ public class ExpLogica extends Expressao {
         this.exp2 = exp2;
     }
 
+    @Override
     public double avalia() {
 
         boolean v = false,
-                opr1B = false,
-                opr2B = false;
+        opr1B = false,
+        opr2B = false;
         double valor = FALSE;
 
         opr1 = (Expressao) exp1;
