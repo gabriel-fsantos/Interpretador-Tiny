@@ -1,7 +1,5 @@
 package Expressao;
 
-import Variavel.Variaveis;
-
 public class ExpLogica extends Expressao {
 
     String op;
@@ -19,15 +17,27 @@ public class ExpLogica extends Expressao {
     @Override
     public double avalia() {
 
-        boolean v = false,
-        opr1B = false,
-        opr2B = false;
-        double valor = FALSE;
-
         opr1 = (Expressao) exp1;
         opr2 = (Expressao) exp2;
-
-        //insira seu codigo aqui
+        
+        boolean v = false,
+        opr1B = this.opr1.avalia() == 1,
+        opr2B = this.opr2.avalia() == 1;
+        
+        double valor = FALSE;
+        
+        switch(op){
+            case("and"):
+                v = opr2B && opr2B;
+                break;
+            case("or"):
+                v = opr2B || opr2B;
+                break;
+            case("not"):
+                v = !(opr2B);
+                break;
+        }
+        
         if (v == true) {
             valor = TRUE;
         }

@@ -8,6 +8,7 @@ public class ComandoIf extends Comando implements Condicao {
     Expressao exp;
 
     public ComandoIf(int lin, Expressao raizArvoreExpressao) {
+        linha = lin;
     }
 
     @Override

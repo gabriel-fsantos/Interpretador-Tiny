@@ -11,6 +11,7 @@ public class ComandoAtrib extends Comando {
     public ComandoAtrib(int lin, char var, Expressao raizArvoreExpressao) {
         this.variavel = var;
         this.exp = raizArvoreExpressao;
+        linha = lin;
     }
 
     @Override

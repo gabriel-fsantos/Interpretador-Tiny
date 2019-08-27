@@ -33,7 +33,8 @@ public class Interpretador {
 
         do {
             comandoAtual = arq.proximaPalavra();
-
+            System.out.println(comandoAtual);
+            
             if (comandoAtual.equals("endp")) {
                 trataComandoEndp(linha);
                 linha++;
@@ -55,7 +56,7 @@ public class Interpretador {
                 linha++;
             } 
             else if (comandoAtual.equals("read")) {
-                arq.proximaPalavra();
+                comandoAtual = arq.proximaPalavra();
                 comandoAtual = arq.proximaPalavra();
                 trataComandoRead(linha, comandoAtual);
                 linha++;
@@ -89,7 +90,6 @@ public class Interpretador {
                 String variavel = comandoAtual;
                 comandoAtual = arq.proximaPalavra();
                 trataComandoAtrib(linha, variavel);
-                //comandoAtual = arq.proximaPalavra();
                 linha++;
             }
 
@@ -158,7 +158,6 @@ public class Interpretador {
     private void trataExpressao() {
         
         palavraAtual = arq.proximaPalavra();
-        //System.out.println(palavraAtual);
         pilha = new Stack();
         expressaoLogica();
         raizArvoreExpressao = (Expressao) pilha.pop();
