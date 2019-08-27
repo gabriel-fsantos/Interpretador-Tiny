@@ -1,9 +1,10 @@
 writeStr("Informe o tamanho dos lados do triangulo");
-writeStr("Lado 1= ");
+writeln;
+writeStr("Lado 1 = ");
 read(a);
-writeStr("Lado 2= ");
+writeStr("Lado 2 = ");
 read(b);
-writeStr("Lado 3= ");
+writeStr("Lado 3 = ");
 read(c);
 if (a = b) and (b = c) then
    writeStr("O triangulo eh equilatero");
@@ -14,4 +15,5 @@ else
      writeStr("O triangulo eh escaleno");
   endif
 endif
+writeln;
 endp

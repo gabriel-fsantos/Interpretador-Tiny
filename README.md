@@ -6,8 +6,8 @@ Interpretador da Linguagem Tiny, linguagem desenvolvida pelo professor Fabricio 
 
 ## Andamento
 - [x] Entrada e Saída;
-- [ ] Atribuição de Variaveis;
-- [ ] If e Else;
+- [x] Atribuição de Variaveis;
+- [x] If e Else;
 - [ ] While;
 - [ ] For;
 - [ ] Funções;

@@ -33,7 +33,7 @@ public class Interpretador {
 
         do {
             comandoAtual = arq.proximaPalavra();
-            System.out.println(comandoAtual);
+            //System.out.println(comandoAtual);
             
             if (comandoAtual.equals("endp")) {
                 trataComandoEndp(linha);
@@ -127,7 +127,7 @@ public class Interpretador {
     }
 
     private void trataComandoIf(int lin) {
-        
+      
         trataExpressao();
         ComandoIf c = new ComandoIf(lin, raizArvoreExpressao);
         comandos.addElement(c);
@@ -250,6 +250,7 @@ public class Interpretador {
         int pc = 0;
         do {
             cmd = (Comando) comandos.elementAt(pc);
+
             pc = cmd.executa();
         } while (pc != -1);
     }

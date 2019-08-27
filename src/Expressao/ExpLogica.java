@@ -28,10 +28,10 @@ public class ExpLogica extends Expressao {
         
         switch(op){
             case("and"):
-                v = opr2B && opr2B;
+                v = opr2B && opr1B;
                 break;
             case("or"):
-                v = opr2B || opr2B;
+                v = opr2B || opr1B;
                 break;
             case("not"):
                 v = !(opr2B);

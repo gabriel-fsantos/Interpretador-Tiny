@@ -24,22 +24,22 @@ public class ExpComparativa extends Expressao {
         
         switch(op){
             case(">"):
-                v = this.opr2.avalia() > this.opr2.avalia();
+                v = this.opr2.avalia() > this.opr1.avalia();
                 break;
             case("<"):
-                v = this.opr2.avalia() < this.opr2.avalia();
+                v = this.opr2.avalia() < this.opr1.avalia();
                 break;
             case(">="):
-                v = this.opr2.avalia() >= this.opr2.avalia();
+                v = this.opr2.avalia() >= this.opr1.avalia();
                 break;
             case("<="):
-                v = this.opr2.avalia() <= this.opr2.avalia();
+                v = this.opr2.avalia() <= this.opr1.avalia();
                 break;
             case("="):
-                v = this.opr2.avalia() == this.opr2.avalia();
+                v = this.opr2.avalia() == this.opr1.avalia();
                 break;
             case("<>"):
-                v = this.opr2.avalia() != this.opr2.avalia();
+                v = this.opr2.avalia() != this.opr1.avalia();
                 break;
         } 
         

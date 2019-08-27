@@ -8,15 +8,20 @@ public class ComandoIf extends Comando implements Condicao {
     Expressao exp;
 
     public ComandoIf(int lin, Expressao raizArvoreExpressao) {
-        linha = lin;
+        this.linha = lin;
+        this.exp = raizArvoreExpressao;
     }
 
     @Override
     public void setLinhaEnd(int lin) {
+        linhaEnd = lin;
     }
 
     @Override
     public int executa() {
-        return 0;
+         if(exp.avalia() == 1){
+             return linha + 1;
+         }
+         return linhaEnd;
     }
 }
