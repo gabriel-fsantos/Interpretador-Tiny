@@ -1,7 +1,5 @@
 package Expressao;
 
-import Variavel.Variaveis;
-
 public class ExpSqrt extends Expressao {
 
     String sqrt;
@@ -13,9 +11,7 @@ public class ExpSqrt extends Expressao {
     @Override
     public double avalia() {
         double valor;
-
-        valor = 0;
-
+        valor = Math.sqrt(Double.parseDouble(sqrt));
         return valor;
     }
 

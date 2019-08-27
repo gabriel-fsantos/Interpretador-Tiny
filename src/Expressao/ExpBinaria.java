@@ -10,24 +10,26 @@ public class ExpBinaria extends Expressao {
         this.op = op;
         this.exp1 = exp1;
         this.exp2 = exp2;
+        this.cmd1 = (ExpConstante) exp1;
+        this.cmd2 = (ExpConstante) exp2;    
     }
-
+    
     @Override
     public double avalia() {
         
         double resultado = 0; 
         switch (op) {
             case "+":
-                resultado = (double) exp1 + (double) exp2;
+                resultado = cmd2.avalia() + cmd1.avalia();
                 break;
             case "-":
-                resultado = (double) exp1 - (double) exp2;
+                resultado = cmd2.avalia() - cmd1.avalia();
                 break;    
             case "*":
-                resultado = (double) exp1 * (double) exp2;
+                resultado = cmd2.avalia() * cmd1.avalia();
                 break;  
             case "/":
-                resultado = (double) exp1 / (double) exp2;
+                resultado = cmd2.avalia() / cmd1.avalia();
                 break; 
             default:
                 break;

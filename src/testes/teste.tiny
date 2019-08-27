@@ -1,4 +1,7 @@
-read(a)
-a:= a + 1;
+a:= 9 / 3;
+b:= 9 - 3;
 writeVar(a);
+writeln(); 
+writeVar(b);
+writeln;
 endp
