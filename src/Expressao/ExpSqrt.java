@@ -14,5 +14,4 @@ public class ExpSqrt extends Expressao {
         valor = Math.sqrt(Double.parseDouble(sqrt));
         return valor;
     }
-
 }

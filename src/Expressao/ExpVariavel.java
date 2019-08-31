@@ -14,5 +14,4 @@ public class ExpVariavel extends Expressao {
     public double avalia() {
         return Variaveis.var[variavel - 97];
     }
-
 }

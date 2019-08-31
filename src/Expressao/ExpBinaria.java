@@ -10,8 +10,8 @@ public class ExpBinaria extends Expressao {
         this.op = op;
         this.exp1 = exp1;
         this.exp2 = exp2;
-        this.cmd1 = (ExpConstante) exp1;
-        this.cmd2 = (ExpConstante) exp2;    
+        this.cmd1 = (Expressao) exp1;
+        this.cmd2 = (Expressao) exp2;    
     }
     
     @Override

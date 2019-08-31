@@ -43,6 +43,6 @@ public class ExpLogica extends Expressao {
         }
 
         return valor;
-
+        
     }
 }

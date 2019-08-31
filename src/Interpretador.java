@@ -33,20 +33,19 @@ public class Interpretador {
 
         do {
             comandoAtual = arq.proximaPalavra();
-            //System.out.println(comandoAtual);
             
             if (comandoAtual.equals("endp")) {
                 trataComandoEndp(linha);
                 linha++;
             }
             else if (comandoAtual.equals("writeStr")) {
-                comandoAtual = arq.proximaPalavra();
+                arq.proximaPalavra();
                 comandoAtual = arq.proximaPalavra();
                 trataComandoWriteStr(linha, comandoAtual);
                 linha++;
             } 
             else if (comandoAtual.equals("writeVar")) {
-                comandoAtual = arq.proximaPalavra();
+                arq.proximaPalavra();
                 comandoAtual = arq.proximaPalavra();
                 trataComandoWriteVar(linha, comandoAtual);
                 linha++;
@@ -56,7 +55,7 @@ public class Interpretador {
                 linha++;
             } 
             else if (comandoAtual.equals("read")) {
-                comandoAtual = arq.proximaPalavra();
+                arq.proximaPalavra();
                 comandoAtual = arq.proximaPalavra();
                 trataComandoRead(linha, comandoAtual);
                 linha++;

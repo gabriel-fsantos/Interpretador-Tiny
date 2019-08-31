@@ -1,5 +1,5 @@
 a:= 9 / 3;
-b:= 9 - 3;
+b:= a +(sqrt(25)*2;
 writeVar(a);
 writeln;
 writeVar(b);

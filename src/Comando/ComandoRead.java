@@ -2,8 +2,6 @@ package Comando;
 
 import Variavel.Variaveis;
 import java.io.*;
-import java.util.*;
-import lp.*;
 
 public class ComandoRead extends Comando {
 
