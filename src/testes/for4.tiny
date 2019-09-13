@@ -1,0 +1,10 @@
+writeStr("Entre com o numero de linhas: ");
+read(n);
+for a:= 10 downto n do 
+  for i:= 10 downto n do
+    writeStr("-");
+  endfor
+  writeln;
+  writeStr("*");
+endfor
+endp
