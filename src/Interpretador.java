@@ -92,12 +92,12 @@ public class Interpretador {
                 String varValor = arq.proximaPalavra();
                 String tipo = arq.proximaPalavra();
                 trataComandoFor(linha, variavel, varValor, tipo);
-                linha++;				
+                linha++;	
             }
             else if (comandoAtual.equals("endfor")){
                 int linhaFor = (Integer)pilhaC.pop();
                 trataComandoEndfor(linha, linhaFor);
-                linha++;				
+                linha++;	
             }
             else if ( comandoAtual.length() == 1 && comandoAtual.charAt(0) >= 'a' && comandoAtual.charAt(0) <= 'z'){
                 String variavel = comandoAtual;
@@ -271,8 +271,8 @@ public class Interpretador {
             palavraAtual = arq.proximaPalavra();
         }
         else if (palavraAtual.charAt(0) >= '0' && palavraAtual.charAt(0) <= '9') {
-           pilha.push(new ExpConstante(Double.parseDouble(palavraAtual)));
-           palavraAtual = arq.proximaPalavra();
+            pilha.push(new ExpConstante(Double.parseDouble(palavraAtual)));
+            palavraAtual = arq.proximaPalavra();
         }
         else if (palavraAtual.charAt(0) >= 'a' && palavraAtual.charAt(0) <= 'z') {
             pilha.push(new ExpVariavel(palavraAtual.charAt(0)));

@@ -1,6 +1,5 @@
 package Comando;
 
-import Variavel.*;
 import Expressao.*;
 	 
 public class ComandoWhile extends Comando{
@@ -9,15 +8,20 @@ public class ComandoWhile extends Comando{
     Expressao exp;
 
     public ComandoWhile(int lin, Expressao raizArvoreExpressao) {
-
+        this.exp = raizArvoreExpressao;
+        this.linha = lin;
     }
 
-    public void setLinhaEnd(int lin){		
+    public void setLinhaEnd(int lin){
+        this.linhaEnd = lin;
     }
 
     @Override
     public int executa() {
-        return 0;
+        if(exp.avalia() == 1){
+            return linha + 1;
+        }
+        return linhaEnd + 1;
     }
 }
 

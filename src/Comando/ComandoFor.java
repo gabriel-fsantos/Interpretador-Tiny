@@ -14,6 +14,13 @@ public class ComandoFor extends Comando{
     boolean inicio = true;
 
     public ComandoFor(int lin, String var, String vValor, String tipo, Expressao raizArvoreExpressao) {
+        
+        this.linha = lin;
+        this.varValor = Integer.parseInt(vValor);
+        this.tipo = tipo;
+        this.exp = raizArvoreExpressao;
+        this.variavel = var.charAt(0);
+        
     }
 
     public char getVar(){
@@ -25,11 +32,34 @@ public class ComandoFor extends Comando{
     }
 
     public void setLinhaEnd(int lin){
+        this.linhaEnd = lin;
     }
 
     @Override
     public int executa() {
-        return 0;
+        
+        if(inicio){
+            Variaveis.var[variavel-'a'] = varValor;
+            inicio = !inicio;
+        }
+        
+        if(tipo.equals("to")){
+            if(Variaveis.var[variavel - 'a'] <= exp.avalia()){
+                return linha+1;
+            }
+            else{
+                inicio = true;
+                return linhaEnd+1;
+            }
+        }
+        else{
+            if(Variaveis.var[variavel - 'a'] >= exp.avalia()){
+                return linha+1;
+            }
+            else{
+                inicio = true;
+                return linhaEnd+1;
+            }
+        }
     }
 }
-

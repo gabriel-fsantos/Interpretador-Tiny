@@ -8,8 +8,8 @@ Interpretador da Linguagem Tiny, linguagem desenvolvida pelo professor Fabricio 
 - [x] Entrada e Saída;
 - [x] Atribuição de Variaveis;
 - [x] If e Else;
-- [ ] While;
-- [ ] For;
+- [x] While;
+- [x] For;
 - [ ] Funções;
 - [ ] Orientação a Objetos;
 

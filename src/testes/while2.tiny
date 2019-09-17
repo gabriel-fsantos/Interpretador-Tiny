@@ -13,7 +13,7 @@ else
 	 	writeVar(i);
 		i:= i + 1;
 	 endw
-    a:= a + 1;
+        a:= a + 1;
 	 writeln;
 	 writeln;
   endw
