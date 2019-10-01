@@ -1,5 +1,7 @@
 package Expressao;
 
+import Variavel.Memoria;
+
 public class ExpComparativa extends Expressao {
 
     String op;
@@ -17,29 +19,29 @@ public class ExpComparativa extends Expressao {
     }
 
     @Override
-    public double avalia() {
+    public double avalia(Memoria local, Memoria global) {
         
         boolean v = false;
         double valor = FALSE;
         
         switch(op){
             case(">"):
-                v = this.opr2.avalia() > this.opr1.avalia();
+                v = this.opr2.avalia(local, global) > this.opr1.avalia(local, global);
                 break;
             case("<"):
-                v = this.opr2.avalia() < this.opr1.avalia();
+                v = this.opr2.avalia(local, global) < this.opr1.avalia(local, global);
                 break;
             case(">="):
-                v = this.opr2.avalia() >= this.opr1.avalia();
+                v = this.opr2.avalia(local, global) >= this.opr1.avalia(local, global);
                 break;
             case("<="):
-                v = this.opr2.avalia() <= this.opr1.avalia();
+                v = this.opr2.avalia(local, global) <= this.opr1.avalia(local, global);
                 break;
             case("="):
-                v = this.opr2.avalia() == this.opr1.avalia();
+                v = this.opr2.avalia(local, global) == this.opr1.avalia(local, global);
                 break;
             case("<>"):
-                v = this.opr2.avalia() != this.opr1.avalia();
+                v = this.opr2.avalia(local, global) != this.opr1.avalia(local, global);
                 break;
         } 
         
@@ -48,6 +50,5 @@ public class ExpComparativa extends Expressao {
         }
 
         return valor;
-
     }
 }

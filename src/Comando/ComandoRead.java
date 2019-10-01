@@ -1,6 +1,6 @@
 package Comando;
 
-import Variavel.Variaveis;
+import Variavel.Memoria;
 import java.io.*;
 
 public class ComandoRead extends Comando {
@@ -14,10 +14,16 @@ public class ComandoRead extends Comando {
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
 
         try {
-            Variaveis.var[variavel - 'a'] = Float.parseFloat(teclado.readLine());
+            if(local.var[variavel - 97] != -1){
+                local.var[variavel - 97] = Float.parseFloat(teclado.readLine());
+            }
+            else{
+                global.var[variavel - 97] = Float.parseFloat(teclado.readLine());
+            }       
+
         } catch (Exception e) {
             System.out.println("ERRO: " + e);
         }

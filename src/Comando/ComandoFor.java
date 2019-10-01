@@ -36,7 +36,7 @@ public class ComandoFor extends Comando{
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
         
         if(inicio){
             Variaveis.var[variavel-'a'] = varValor;
@@ -44,7 +44,7 @@ public class ComandoFor extends Comando{
         }
         
         if(tipo.equals("to")){
-            if(Variaveis.var[variavel - 'a'] <= exp.avalia()){
+            if(Variaveis.var[variavel - 'a'] <= exp.avalia(local, global)){
                 return linha+1;
             }
             else{
@@ -53,7 +53,7 @@ public class ComandoFor extends Comando{
             }
         }
         else{
-            if(Variaveis.var[variavel - 'a'] >= exp.avalia()){
+            if(Variaveis.var[variavel - 'a'] >= exp.avalia(local,global)){
                 return linha+1;
             }
             else{

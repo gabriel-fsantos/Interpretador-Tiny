@@ -1,5 +1,7 @@
 package Expressao;
 
+import Variavel.Memoria;
+
 public class ExpLogica extends Expressao {
 
     String op;
@@ -15,14 +17,14 @@ public class ExpLogica extends Expressao {
     }
 
     @Override
-    public double avalia() {
+    public double avalia(Memoria local, Memoria global) {
 
         opr1 = (Expressao) exp1;
         opr2 = (Expressao) exp2;
         
         boolean v = false,
-        opr1B = this.opr1.avalia() == 1,
-        opr2B = this.opr2.avalia() == 1;
+        opr1B = this.opr1.avalia(local, global) == 1,
+        opr2B = this.opr2.avalia(local, global) == 1;
         
         double valor = FALSE;
         

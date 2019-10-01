@@ -1,7 +1,7 @@
 package Comando;
 
-import Variavel.Variaveis;
 import Expressao.*;
+import Variavel.Memoria;
 
 public class ComandoAtrib extends Comando {
 
@@ -15,9 +15,15 @@ public class ComandoAtrib extends Comando {
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
+        
         try {
-            Variaveis.var[variavel - 'a'] = exp.avalia();
+            if(local.var[variavel - 97] != -1){
+                local.var[variavel - 97] = exp.avalia(local, global);
+            }
+            else{
+                global.var[variavel - 97] = exp.avalia(local, global);
+            }  
         } catch (Exception e) {
             System.out.println("ERRO: " + e);
         }

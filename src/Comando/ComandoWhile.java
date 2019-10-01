@@ -1,6 +1,7 @@
 package Comando;
 
 import Expressao.*;
+import Variavel.Memoria;
 	 
 public class ComandoWhile extends Comando{
 
@@ -17,8 +18,8 @@ public class ComandoWhile extends Comando{
     }
 
     @Override
-    public int executa() {
-        if(exp.avalia() == 1){
+    public int executa(Memoria local, Memoria global) {
+        if(exp.avalia(local, global) == 1){
             return linha + 1;
         }
         return linhaEnd + 1;

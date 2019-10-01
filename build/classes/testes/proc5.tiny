@@ -1,0 +1,24 @@
+global z;
+
+proc imprime_asteriscos (n)
+  local i;
+  for i:= 1 to n do
+    writeStr("*")
+  endfor
+  writeln;
+endproc
+
+proc soma(x, y)
+  z:= x + y;
+endproc
+
+proc main()
+  local x,y;
+  writeStr("x=")
+  read(x);
+  writeStr("y=")
+  read(y);
+  call imprime_asteriscos(x);
+  call soma(x,y);
+  writeVar(z);
+endproc

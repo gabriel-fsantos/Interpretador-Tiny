@@ -1,5 +1,7 @@
 package Comando;
 
+import Variavel.Memoria;
+
 public class ComandoWriteln extends Comando {
 
     public ComandoWriteln(int lin) {
@@ -7,7 +9,7 @@ public class ComandoWriteln extends Comando {
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
         System.out.println();
         return linha + 1;
     }

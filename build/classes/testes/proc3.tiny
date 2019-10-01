@@ -1,0 +1,16 @@
+global z;
+
+proc soma( a, b )
+	z:= a + b;
+endproc
+
+proc main()
+  local x,y;
+  read(x);
+  read(y);
+  writeVar(x);
+  writeVar(y);
+  call soma( x, y );
+  writeVar(z);
+endproc
+endp

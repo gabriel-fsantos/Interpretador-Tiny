@@ -1,0 +1,18 @@
+global z;
+
+proc teste( a )
+	if a > 0 then
+   	writeStr("a maior que zero");
+	else
+   	read(a);
+	  	writeVar(a);
+	  	call teste( a );
+ 	endif
+endproc
+
+proc main()
+  local x;
+  read(x);
+  writeVar(x);
+  call teste( x );
+endproc

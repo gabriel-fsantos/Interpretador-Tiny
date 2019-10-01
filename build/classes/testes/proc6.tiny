@@ -1,0 +1,34 @@
+global z;
+
+proc imprime_asteriscos (n)
+  local i;
+  for i:= 1 to n do
+    writeStr("*")
+  endfor
+  writeln;
+endproc
+
+proc imprime_dolar (n)
+  if n > 0 then 
+     writeStr("$");
+	  call imprime_dolar( n-1 );
+  else
+    writeln;
+  endif
+endproc
+
+proc soma(x, y)
+  z:= x + y;
+endproc
+
+proc main()
+  local x,y;
+  writeStr("x=")
+  read(x);
+  writeStr("y=")
+  read(y);
+  call imprime_asteriscos(x);
+  call imprime_dolar(y);
+  call soma(x,y);
+  writeVar(z);
+endproc

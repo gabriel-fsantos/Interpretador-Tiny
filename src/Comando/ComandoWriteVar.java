@@ -1,6 +1,6 @@
 package Comando;
 
-import Variavel.Variaveis;
+import Variavel.Memoria;
 
 public class ComandoWriteVar extends Comando {
 
@@ -12,8 +12,13 @@ public class ComandoWriteVar extends Comando {
     }
 
     @Override
-    public int executa() {
-        System.out.print(Variaveis.var[variavel - 'a']);
+    public int executa(Memoria local, Memoria global) {
+        if(local.var[variavel - 97] != -1){
+            System.out.print(local.var[variavel - 97]);
+        }
+        else{
+            System.out.print(global.var[variavel - 97]);
+        }
         return linha + 1;
     }
 }

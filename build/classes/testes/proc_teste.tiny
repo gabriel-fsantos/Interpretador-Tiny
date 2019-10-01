@@ -1,0 +1,9 @@
+global e,r,j;
+proc somar ( n, v, t );
+local x,z,p,a,b;
+proc somar2 ( n, v, t );
+local c;
+writeln;
+writeStr("fim");
+endproc
+endp

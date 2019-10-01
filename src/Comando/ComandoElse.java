@@ -1,5 +1,7 @@
 package Comando;
 
+import Variavel.Memoria;
+
 public class ComandoElse extends Comando implements Condicao {
 
     int linhaEnd;
@@ -14,7 +16,7 @@ public class ComandoElse extends Comando implements Condicao {
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
         return linhaEnd;
     }
 }

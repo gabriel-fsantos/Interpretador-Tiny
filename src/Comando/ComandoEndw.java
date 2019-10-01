@@ -1,5 +1,7 @@
 package Comando;
 
+import Variavel.Memoria;
+
 public class ComandoEndw extends Comando {
 
     int linhaW;
@@ -10,7 +12,7 @@ public class ComandoEndw extends Comando {
     }
 
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
         return linhaW;
     }
 }

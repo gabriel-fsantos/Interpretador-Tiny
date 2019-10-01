@@ -1,5 +1,7 @@
 package Expressao;
 
+import Variavel.Memoria;
+
 public class ExpBinaria extends Expressao {
 
     String op;
@@ -15,21 +17,21 @@ public class ExpBinaria extends Expressao {
     }
     
     @Override
-    public double avalia() {
+    public double avalia(Memoria local, Memoria global) {
         
         double resultado = 0; 
         switch (op) {
             case "+":
-                resultado = cmd2.avalia() + cmd1.avalia();
+                resultado = cmd2.avalia(local, global) + cmd1.avalia(local, global);
                 break;
             case "-":
-                resultado = cmd2.avalia() - cmd1.avalia();
+                resultado = cmd2.avalia(local, global) - cmd1.avalia(local, global);
                 break;    
             case "*":
-                resultado = cmd2.avalia() * cmd1.avalia();
+                resultado = cmd2.avalia(local, global) * cmd1.avalia(local, global);
                 break;  
             case "/":
-                resultado = cmd2.avalia() / cmd1.avalia();
+                resultado = cmd2.avalia(local, global) / cmd1.avalia(local, global);
                 break; 
             default:
                 break;

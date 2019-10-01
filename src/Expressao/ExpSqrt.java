@@ -1,5 +1,7 @@
 package Expressao;
 
+import Variavel.Memoria;
+
 public class ExpSqrt extends Expressao {
 
     String sqrt;
@@ -9,7 +11,7 @@ public class ExpSqrt extends Expressao {
     }
 
     @Override
-    public double avalia() {
+    public double avalia(Memoria local, Memoria global) {
         double valor;
         valor = Math.sqrt(Double.parseDouble(sqrt));
         return valor;

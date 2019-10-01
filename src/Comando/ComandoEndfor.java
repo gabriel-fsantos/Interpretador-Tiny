@@ -18,7 +18,7 @@ public class ComandoEndfor extends Comando {
     }
    
     @Override
-    public int executa() {
+    public int executa(Memoria local, Memoria global) {
         
         if(tipo.equals("to")){
             Variaveis.var[variavel - 'a']++;
