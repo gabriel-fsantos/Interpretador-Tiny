@@ -3,18 +3,18 @@ package Comando;
 import Expressao.*;
 import Variavel.Memoria;
 
-public class ComandoIf extends Comando implements Condicao {
+public class ComandoIf extends Comando implements Condicao{
 
     int linhaEnd;
     Expressao exp;
 
-    public ComandoIf(int lin, Expressao raizArvoreExpressao) {
+    public ComandoIf(int lin, Expressao raizArvoreExpressao){
         this.linha = lin;
         this.exp = raizArvoreExpressao;
     }
 
     @Override
-    public void setLinhaEnd(int lin) {
+    public void setLinhaEnd(int lin){
         linhaEnd = lin;
     }
 

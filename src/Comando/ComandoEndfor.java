@@ -2,13 +2,13 @@ package Comando;
 
 import Variavel.*;
 
-public class ComandoEndfor extends Comando {
+public class ComandoEndfor extends Comando{
    
     int linhaFor;
     char variavel;
     String tipo;
 		
-    public ComandoEndfor(int lin, int linFor, char var, String tipo) {
+    public ComandoEndfor(int lin, int linFor, char var, String tipo){
         
         this.linha = lin;
         this.linhaFor = linFor;
@@ -18,7 +18,7 @@ public class ComandoEndfor extends Comando {
     }
    
     @Override
-    public int executa(Memoria local, Memoria global) {
+    public int executa(Memoria local, Memoria global){
         
         if(tipo.equals("to")){
             Variaveis.var[variavel - 'a']++;

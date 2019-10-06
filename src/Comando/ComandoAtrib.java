@@ -3,19 +3,19 @@ package Comando;
 import Expressao.*;
 import Variavel.Memoria;
 
-public class ComandoAtrib extends Comando {
+public class ComandoAtrib extends Comando{
 
     char variavel;
     Expressao exp;
 
-    public ComandoAtrib(int lin, char var, Expressao raizArvoreExpressao) {
+    public ComandoAtrib(int lin, char var, Expressao raizArvoreExpressao){
         this.variavel = var;
         this.exp = raizArvoreExpressao;
         linha = lin;
     }
 
     @Override
-    public int executa(Memoria local, Memoria global) {
+    public int executa(Memoria local, Memoria global){
         
         try {
             if(local.var[variavel - 97] != -1){

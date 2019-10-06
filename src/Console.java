@@ -12,9 +12,8 @@ public class Console {
                 if (ch < 0 || (char)ch == '\n')
                     done = true;
                 else if ((char)ch != '\r')
-                    r = r + (char) ch;
-            }
-            catch(java.io.IOException e){
+                    r = r + (char)ch;
+            }catch(java.io.IOException e){
                 done = true;
             }
         }
@@ -26,8 +25,7 @@ public class Console {
 	while(true) {
 	    try {
 		return Integer.valueOf(readLine().trim()).intValue();
-	    }
-	    catch(NumberFormatException e){
+            }catch(NumberFormatException e){
 		System.out.println("Not an integer. Please try again!");
 	    }
         }

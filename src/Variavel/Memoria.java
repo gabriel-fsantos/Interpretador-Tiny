@@ -1,13 +1,13 @@
 package Variavel;
 
-public class Memoria {
+public class Memoria{
 
     public double[] var;
 
     public Memoria(){
         
         var = new double[26];
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; i++){
             var[i] = -1;
         }
     }
@@ -19,7 +19,6 @@ public class Memoria {
         for (int i = 0; i < 26; i++) {
             sb.append("[").append(i).append("] = ").append(var[i]).append("\n");
         }
-
         return sb.toString();
     }
 }

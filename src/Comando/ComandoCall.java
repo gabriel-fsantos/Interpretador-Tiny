@@ -4,13 +4,13 @@ import Variavel.*;
 import Expressao.*;
 import Proc.*;
 
-public class ComandoCall extends Comando {
+public class ComandoCall extends Comando{
 
     Procedimento procedimento;
     Expressao[] arg;
     int tamanho;
 
-    public ComandoCall(int lin, Procedimento proc, Expressao[] a, int tam) {
+    public ComandoCall(int lin, Procedimento proc, Expressao[] a, int tam){
         this.procedimento = proc;
         this.arg = a;
         this.tamanho = tam;
@@ -18,7 +18,7 @@ public class ComandoCall extends Comando {
     }
 
     @Override
-    public int executa(Memoria local, Memoria global) {
+    public int executa(Memoria local, Memoria global){
 
         double[] argumentos = new double[this.tamanho];
         int i = 0;

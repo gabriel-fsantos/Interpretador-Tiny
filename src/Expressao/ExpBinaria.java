@@ -2,13 +2,13 @@ package Expressao;
 
 import Variavel.Memoria;
 
-public class ExpBinaria extends Expressao {
+public class ExpBinaria extends Expressao{
 
     String op;
     Object exp1, exp2;
     Expressao cmd1, cmd2;
 
-    public ExpBinaria(String op, Object exp1, Object exp2) {
+    public ExpBinaria(String op, Object exp1, Object exp2){
         this.op = op;
         this.exp1 = exp1;
         this.exp2 = exp2;
@@ -17,7 +17,7 @@ public class ExpBinaria extends Expressao {
     }
     
     @Override
-    public double avalia(Memoria local, Memoria global) {
+    public double avalia(Memoria local, Memoria global){
         
         double resultado = 0; 
         switch (op) {

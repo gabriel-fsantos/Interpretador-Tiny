@@ -4,7 +4,7 @@ import Expressao.*;
 import java.util.*;
 import lp.*;
 
-public class Interpretador {
+public class Interpretador{
 
     private ArquivoFonte arq;
     private Vector proc;
@@ -16,13 +16,13 @@ public class Interpretador {
     private boolean maisArgumentos = true;
     private static final int MAX_VETOR = 10;
 
-    public Interpretador(String nome) {
+    public Interpretador(String nome){
         arq = new ArquivoFonte(nome);
         comandos = new Vector();
         proc = new Vector();
     }
 
-    public void listaArquivo() {
+    public void listaArquivo(){
         String palavra;
         do {
             palavra = arq.proximaPalavra();
@@ -30,7 +30,7 @@ public class Interpretador {
         } while (!palavra.equals("EOF"));
     }
 
-    public void leArquivo() {
+    public void leArquivo(){
 
         Stack pilhaC = new Stack();
         String comandoAtual;
@@ -116,10 +116,10 @@ public class Interpretador {
                 trataComandoAtrib(linha, variavel);
                 linha++;
             }
-            else if (comandoAtual.equals("global")) {
+            else if (comandoAtual.equals("global")){
                 String[] variaveisGlobal = new String[MAX_VETOR];
                 int k = 0;
-                while (!comandoAtual.equals(";")) {
+                while (!comandoAtual.equals(";")){
                     comandoAtual = arq.proximaPalavra(); 	// variaveis globais
                     variaveisGlobal[k] = comandoAtual;          // armazena variaveis		
                     k++;
@@ -127,7 +127,7 @@ public class Interpretador {
                 }
                 trataComandoGlobal(variaveisGlobal);
             } 
-            else if (comandoAtual.equals("proc")) {
+            else if (comandoAtual.equals("proc")){
                 String[] parametros = new String[MAX_VETOR];
                 int k = 0;
                 String nome = arq.proximaPalavra();             // <nome>
@@ -143,13 +143,13 @@ public class Interpretador {
                 }
                 trataProcedimento(nome, parametros);
             } 
-            else if (comandoAtual.equals("endproc")) {
+            else if (comandoAtual.equals("endproc")){
                 trataEndproc();
             } 
-            else if (comandoAtual.equals("local")) {
+            else if (comandoAtual.equals("local")){
                 String[] variaveisLocal = new String[MAX_VETOR];
                 int k = 0;
-                while (!comandoAtual.equals(";")) {
+                while (!comandoAtual.equals(";")){
                     comandoAtual = arq.proximaPalavra(); 	// variaveis locais
                     variaveisLocal[k] = comandoAtual;     	// armazena variaveis		
                     k++;
@@ -157,7 +157,7 @@ public class Interpretador {
                 }
                 trataComandoLocal(variaveisLocal);
             } 
-            else if (comandoAtual.equals("call")) {
+            else if (comandoAtual.equals("call")){
                 String nome = arq.proximaPalavra();		// <nome>
                 trataComandoCall(linha, nome);
                 linha++;
@@ -183,7 +183,7 @@ public class Interpretador {
         comandos.addElement(c);
     }
 
-    private void trataComandoWriteln(int lin) {
+    private void trataComandoWriteln(int lin){
 
         ComandoWriteln c = new ComandoWriteln(lin);
         comandos.addElement(c);
@@ -254,18 +254,18 @@ public class Interpretador {
         comandos.addElement(c);
     }
 
-    private void trataProcedimento(String nome, String[] parametros) {
+    private void trataProcedimento(String nome, String[] parametros){
 
         Procedimento p = new Procedimento(nome, parametros);
         proc.addElement(p);
     }
 
-    private void trataComandoGlobal(String[] vG) {
+    private void trataComandoGlobal(String[] vG){
 
         Procedimento.setVariaveisGlobal(vG);
     }
 
-    private void trataEndproc() {
+    private void trataEndproc(){
 
         Procedimento aux = (Procedimento) proc.lastElement();
         Vector c = (Vector)comandos.clone();
@@ -277,7 +277,7 @@ public class Interpretador {
         }
     }
 
-    private void trataComandoLocal(String[] vL) {
+    private void trataComandoLocal(String[] vL){
 
         Procedimento aux = (Procedimento) proc.lastElement();
         aux.setVariaveisLocal(vL);
@@ -335,8 +335,8 @@ public class Interpretador {
     private void expressaoComparativa(){
         
         expressao();
-        while (palavraAtual.equals("<") || palavraAtual.equals(">") || palavraAtual.equals(">=")
-              || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")){
+        while(palavraAtual.equals("<") || palavraAtual.equals(">") || palavraAtual.equals(">=")
+             || palavraAtual.equals("<=") || palavraAtual.equals("<>") || palavraAtual.equals("=")){
             String op = palavraAtual;
             palavraAtual = arq.proximaPalavra();
             expressao();
@@ -349,7 +349,7 @@ public class Interpretador {
     private void expressao(){
         
         termo();
-        while (palavraAtual.equals("+") || palavraAtual.equals("-")){
+        while(palavraAtual.equals("+") || palavraAtual.equals("-")){
             String op = palavraAtual;
             palavraAtual = arq.proximaPalavra();
             termo();
@@ -376,33 +376,33 @@ public class Interpretador {
         }
     }
 
-    private void fator() {
+    private void fator(){
         
-        if (palavraAtual.equals("sqrt")) {
+        if (palavraAtual.equals("sqrt")){
             palavraAtual = arq.proximaPalavra();
             palavraAtual = arq.proximaPalavra();
             pilha.push(new ExpSqrt(palavraAtual));
             palavraAtual = arq.proximaPalavra();
             palavraAtual = arq.proximaPalavra();
         } 
-        else if (palavraAtual.charAt(0) >= '0' && palavraAtual.charAt(0) <= '9') {
+        else if (palavraAtual.charAt(0) >= '0' && palavraAtual.charAt(0) <= '9'){
             pilha.push(new ExpConstante(Double.parseDouble(palavraAtual)));
             palavraAtual = arq.proximaPalavra();
         } 
-        else if (palavraAtual.charAt(0) >= 'a' && palavraAtual.charAt(0) <= 'z') {
+        else if (palavraAtual.charAt(0) >= 'a' && palavraAtual.charAt(0) <= 'z'){
             pilha.push(new ExpVariavel(palavraAtual.charAt(0)));
             palavraAtual = arq.proximaPalavra();
         } 
-        else if (palavraAtual.equals("(")) {
+        else if (palavraAtual.equals("(")){
             palavraAtual = arq.proximaPalavra();
             expressaoLogica(); 
-            if (palavraAtual.equals(")")) {
+            if (palavraAtual.equals(")")){
                 palavraAtual = arq.proximaPalavra();
             }
         }
     }
 
-    public void executa() {
+    public void executa(){
         
         int i = 1;
         double[] argumentos = new double[MAX_VETOR];

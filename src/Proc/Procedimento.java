@@ -4,7 +4,7 @@ import Variavel.*;
 import Comando.*;
 import java.util.*;
 
-public class Procedimento {
+public class Procedimento{
 
     String nome;     			   // nome do procedimento  
     Vector comandos;    		   // vetor de comandos 
@@ -12,16 +12,16 @@ public class Procedimento {
     String[] variaveisLocal;		   // variaveis local
     static Memoria global = new Memoria(); // variaveis globais	 
 
-    public Procedimento(String n, String[] p) {
+    public Procedimento(String n, String[] p){
         nome = n;
         parametros = p;
     }
 
-    public String getNome() {
+    public String getNome(){
         return nome;
     }
 
-    public static void setVariaveisGlobal(String[] vG) {
+    public static void setVariaveisGlobal(String[] vG){
 
         char var;
         for (String variavel : vG) {
@@ -32,15 +32,15 @@ public class Procedimento {
         }
     }
 
-    public void setVariaveisLocal(String[] vL) {
+    public void setVariaveisLocal(String[] vL){
         this.variaveisLocal = vL;
     }
 
-    public void setListaComandos(Vector c) {
+    public void setListaComandos(Vector c){
         this.comandos = c;
     }
 
-    public void executa(double[] argumentos) {
+    public void executa(double[] argumentos){
 
         Memoria local = new Memoria(); // variaveis local
         char var;
@@ -53,7 +53,6 @@ public class Procedimento {
                 }
             }
         }
-
         // associa argumentos a seus respectivos parametros formais 
         for(int i = 0; i < parametros.length; i++){
             if(parametros[i] != null){

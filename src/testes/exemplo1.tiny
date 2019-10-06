@@ -1,8 +1,0 @@
-writeStr  ("Digite o valor de x: ");
-read (x);
-writeStr ("O valor digitado foi: ");
-writeVar (x);
-writeln;
-writeVar(r);
-writeln;
-endp

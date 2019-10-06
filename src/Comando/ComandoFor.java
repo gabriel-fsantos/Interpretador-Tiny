@@ -13,7 +13,7 @@ public class ComandoFor extends Comando{
     Expressao exp;
     boolean inicio = true;
 
-    public ComandoFor(int lin, String var, String vValor, String tipo, Expressao raizArvoreExpressao) {
+    public ComandoFor(int lin, String var, String vValor, String tipo, Expressao raizArvoreExpressao){
         
         this.linha = lin;
         this.varValor = Integer.parseInt(vValor);
@@ -36,7 +36,7 @@ public class ComandoFor extends Comando{
     }
 
     @Override
-    public int executa(Memoria local, Memoria global) {
+    public int executa(Memoria local, Memoria global){
         
         if(inicio){
             Variaveis.var[variavel-'a'] = varValor;
@@ -53,7 +53,7 @@ public class ComandoFor extends Comando{
             }
         }
         else{
-            if(Variaveis.var[variavel - 'a'] >= exp.avalia(local,global)){
+            if(Variaveis.var[variavel - 'a'] >= exp.avalia(local, global)){
                 return linha+1;
             }
             else{

@@ -8,7 +8,7 @@ public class ComandoWhile extends Comando{
     int linhaEnd;
     Expressao exp;
 
-    public ComandoWhile(int lin, Expressao raizArvoreExpressao) {
+    public ComandoWhile(int lin, Expressao raizArvoreExpressao){
         this.exp = raizArvoreExpressao;
         this.linha = lin;
     }
@@ -18,7 +18,7 @@ public class ComandoWhile extends Comando{
     }
 
     @Override
-    public int executa(Memoria local, Memoria global) {
+    public int executa(Memoria local, Memoria global){
         if(exp.avalia(local, global) == 1){
             return linha + 1;
         }
